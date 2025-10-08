@@ -1,9 +1,10 @@
+unsigned int t = 0;
 const int pin[3] = {9,10,11};
 const String colors[8] = {"White", "Cyan", "Yellow", "Green", "Purple", "Blue", "Red", "None"};
 int led = 0;
 void setup() {
   // put your setup code here, to run once:
-  for(int i=0;i<3;i++){
+  for(int i=0;i<5;i++){
     pinMode(pin[i], OUTPUT);
   }
   pinMode(2, INPUT);
@@ -16,6 +17,7 @@ void loop() {
   if(digitalRead(2) == 0){
     delay(50);
     if(digitalRead(2) == 0){
+      t = mili()
       led++;
       led = (led == 8) ? 0 : led;
       Serial.println("Color: " + colors[led] + " " + String(led));
