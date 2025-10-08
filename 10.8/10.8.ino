@@ -1,7 +1,7 @@
 const int pin[3] = {9,10,11};
 unsigned int blinkTimer = 0;
 unsigned int previousBlinkTime = 0;
-const int blinkDelay = 1000;
+int blinkDelay = 1000;
 int led = 0;
 int d = 1;
 void setup() {
@@ -16,6 +16,7 @@ void setup() {
 void loop() {
   // put your main code here, to run repeatedly:
   blinkTimer = millis();
+  blinkDelay = analogRead(A0);
   if(digitalRead(2) == 0){
     delay(50);
     if(digitalRead(2) == 0){
